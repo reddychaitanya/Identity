@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SHIPOS.Identity.Data.Repositories
+namespace SHIPOS.Identity.Data
 {
-    public class ClientRepository
+    public class AuthorizationManager
     {
-
     }
 }

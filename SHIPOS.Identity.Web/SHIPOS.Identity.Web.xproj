@@ -21,5 +21,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <ProduceOutputsOnBuild>False</ProduceOutputsOnBuild>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SHIPOS.Identity.Data\SHIPOS.Identity.Data.csproj" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
