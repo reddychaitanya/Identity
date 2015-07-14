@@ -23,7 +23,7 @@ namespace SHIPOS.Identity.Web
 
         public Task<AuthenticateResult> AuthenticateLocalAsync(string email, string password,  SignInMessage message)
         {
-
+            
             //authenticate
             var user = Users.SingleOrDefault(x => x.Email == email &&  x.DomainKey == this.DomainKey);
             if (user == null)

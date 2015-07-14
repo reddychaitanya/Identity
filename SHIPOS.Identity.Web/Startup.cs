@@ -38,6 +38,7 @@ namespace SHIPOS.Identity.Web
 
                 var userService = new UserService();
                 factory.UserService = new Registration<IUserService>(resolver => userService);
+                factory.ViewService = new Registration<IViewService>(typeof(CustomViewService));
 
                 var idsrvOptions = new IdentityServerOptions
                 {
