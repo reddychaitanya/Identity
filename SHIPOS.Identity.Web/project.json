@@ -34,7 +34,7 @@
     "Dapper.Mapper": "1.13.0",
     "DapperExtensions": "1.4.4",
     "Microsoft.AspNet.Owin": "1.0.0-beta4",
-    "Microsoft.Owin": "3.0.1",
+    "Microsoft.Owin": "3.0.1"
   },
 
   "commands": {
