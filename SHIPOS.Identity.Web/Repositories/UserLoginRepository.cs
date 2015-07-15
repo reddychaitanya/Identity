@@ -16,18 +16,28 @@ namespace SHIPOS.Identity.Data.Repositories
     {
         private IDbConnection _db = new SqlConnection("Data Source=192.168.1.241\\sqlexpress;Initial Catalog=identity;user id=sa;password=Aa123456;");
 
-        public UserLogin Get(int id)
+        public Login Get(int id)
         {
-            return this._db.Query<UserLogin>("SELECT * FROM UserLogin WHERE Id = @Id", new { id }).SingleOrDefault();
+            return this._db.Query<Login>("SELECT * FROM UserLogin WHERE Id = @Id", new { id }).SingleOrDefault();
         }
 
-        public int Insert(UserLogin userLogin)
+        public IEnumerable<Login> GetAll()
+        {
+            return this._db.Query<Login>("SELECT * FROM Login");
+        }
+
+        public Login GetUserByEmail(string Email)
+        {
+            return this._db.Query<Login>("SELECT * FROM Login where Email = @email", new { Email }).SingleOrDefault();
+        }
+
+        public int Insert(Login userLogin)
         {
             dynamic result = _db.Insert(userLogin, null, null);
             return result;
         }
 
-        public int Update(UserLogin userLogin)
+        public int Update(Login userLogin)
         {
             return 0;
         }

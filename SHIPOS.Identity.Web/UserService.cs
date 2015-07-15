@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 using Thinktecture.IdentityServer.Core.Models;
 using Thinktecture.IdentityServer.Core.Services;
 
+using SHIPOS.Identity.Data.Repositories;
+
 namespace SHIPOS.Identity.Web
 {
    public class UserService : IUserService
     {
        
         public Guid DomainKey { get; set; }
-        public static List<UserLogin> Users = new List<UserLogin>();
+       
 
         public Task<AuthenticateResult> AuthenticateExternalAsync(ExternalIdentity externalUser, SignInMessage message)
         {
@@ -23,9 +25,10 @@ namespace SHIPOS.Identity.Web
 
         public Task<AuthenticateResult> AuthenticateLocalAsync(string email, string password,  SignInMessage message)
         {
-            
+
             //authenticate
-            var user = Users.SingleOrDefault(x => x.Email == email &&  x.DomainKey == this.DomainKey);
+            UserLoginRepository userLoginRepository = new UserLoginRepository();
+            var user = userLoginRepository.GetUserByEmail(email);
             if (user == null)
             {
                 return Task.FromResult<AuthenticateResult>(null);

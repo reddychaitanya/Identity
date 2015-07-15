@@ -9,10 +9,10 @@ namespace SHIPOS.Identity.Data.Repositories
 {
     public interface IUserLoginRepository
     {
-        List<UserLogin> GetAll();
-        UserLogin Get(int id);
-        UserLogin Insert(UserLogin user);
-        UserLogin Update(UserLogin user);
+        List<Login> GetAll();
+        Login Get(int id);
+        Login Insert(Login user);
+        Login Update(Login user);
         void Remove(int id);
         
     }

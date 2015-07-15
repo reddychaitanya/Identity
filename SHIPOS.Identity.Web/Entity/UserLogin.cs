@@ -5,7 +5,7 @@ using Dapper.Contrib.Extensions;
 
 namespace SHIPOS.Identity.Data.Entity
 {
-    public class UserLogin
+    public class Login
     {
         [Key]
         public int Id { get; set; }
